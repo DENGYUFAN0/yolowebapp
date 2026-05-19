@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><title>Icon Generator</title></head>
+<body>
+<script>
+// 이 파일은 아이콘 생성용 헬퍼입니다
+// 실제 아이콘은 canvas를 통해 생성됩니다
+function generateIcon(size) {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  const cx = size / 2, cy = size / 2;
+  const r = size / 2;
+  const s = size / 512;
+
+  // 배경
+  const grad = ctx.createLinearGradient(0, 0, size, size);
+  grad.addColorStop(0, '#6366f1');
+  grad.addColorStop(1, '#22d3ee');
+  ctx.fillStyle = grad;
+  roundedRect(ctx, 0, 0, size, size, size * 0.22);
+  ctx.fill();
+
+  ctx.strokeStyle = 'rgba(255,255,255,0.9)';
+  ctx.lineCap = 'round';
+
+  // 외부 원
+  ctx.beginPath();
+  ctx.arc(cx, cy, 160 * s, 0, Math.PI * 2);
+  ctx.lineWidth = 20 * s;
+  ctx.stroke();
+
+  // 내부 원
+  ctx.beginPath();
+  ctx.arc(cx, cy, 60 * s, 0, Math.PI * 2);
+  ctx.lineWidth = 16 * s;
+  ctx.stroke();
+
+  // 십자선
+  ctx.lineWidth = 16 * s;
+  line(ctx, cx, 80 * s, cx, 160 * s);
+  line(ctx, cx, 352 * s, cx, 432 * s);
+  line(ctx, 80 * s, cy, 160 * s, cy);
+  line(ctx, 352 * s, cy, 432 * s, cy);
+
+  // 중심점
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(cx, cy, 16 * s, 0, Math.PI * 2);
+  ctx.fill();
+
+  return canvas.toDataURL('image/png');
+}
+
+function line(ctx, x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.stroke();
+}
+
+function roundedRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+</script>
+</body>
+</html>

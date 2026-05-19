@@ -1,0 +1,28 @@
+{
+  "name": "YOLOv5 실시간 객체 탐지",
+  "short_name": "YOLOv5 탐지",
+  "description": "스마트폰 카메라로 AI 실시간 객체 탐지 (80가지 객체)",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "lang": "ko",
+  "dir": "ltr",
+  "prefer_related_applications": false
+}
