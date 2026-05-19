@@ -95,4 +95,6 @@
 - [YOLOv5 원본](https://github.com/ultralytics/yolov5)
 
 ---
+## 실행 
+https://emmetthwang.github.io/yolowebapp/
 **작성일**: 2026-05-19
