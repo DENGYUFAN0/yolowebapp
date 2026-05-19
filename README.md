@@ -5,6 +5,7 @@
 ## 📋 프로젝트 개요
 <img width="1280" height="1032" alt="image" src="https://github.com/user-attachments/assets/a81fac6f-1cd2-4791-84a8-3cde4b5dcd06" />
 
+
 - **원본 프로젝트**: [yolov5ReadTime](https://github.com/EmmettHwang/yolov5ReadTime)
 - **구현 방식**: TensorFlow.js + COCO-SSD (MobileNet V2) - 브라우저 내 AI 추론
 - **지원 클래스**: COCO 80개 객체 (YOLOv5와 동일)
